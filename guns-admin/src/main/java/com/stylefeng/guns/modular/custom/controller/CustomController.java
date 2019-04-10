@@ -1,5 +1,6 @@
 package com.stylefeng.guns.modular.custom.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.stylefeng.guns.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,9 @@ import com.stylefeng.guns.core.log.LogObjectHolder;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.stylefeng.guns.modular.system.model.Custom;
 import com.stylefeng.guns.modular.custom.service.ICustomService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 业主管理控制器
@@ -47,8 +51,11 @@ public class CustomController extends BaseController {
      * 跳转到修改业主管理
      */
     @RequestMapping("/custom_update/{customId}")
-    public String customUpdate(@PathVariable Integer customId, Model model) {
-        Custom custom = customService.selectById(customId);
+    public String customUpdate(@PathVariable String customId, Model model) {
+        System.out.println(customId);
+        EntityWrapper<Custom> ew = new EntityWrapper<>();
+        ew.eq("yzbh",customId);
+        Custom custom = customService.selectOne(ew);
         model.addAttribute("item",custom);
         LogObjectHolder.me().set(custom);
         return PREFIX + "custom_edit.html";
@@ -78,8 +85,8 @@ public class CustomController extends BaseController {
      */
     @RequestMapping(value = "/delete")
     @ResponseBody
-    public Object delete(@RequestParam Integer customId) {
-        customService.deleteById(customId);
+    public Object delete(@RequestParam String customId) {
+        customService.delete(customId);
         return SUCCESS_TIP;
     }
 
@@ -89,7 +96,9 @@ public class CustomController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Custom custom) {
-        customService.updateById(custom);
+        EntityWrapper<Custom> ew = new EntityWrapper<>();
+        ew.eq("yzbh",custom.getYzbh());
+        customService.update(custom,ew);
         return SUCCESS_TIP;
     }
 
@@ -98,7 +107,7 @@ public class CustomController extends BaseController {
      */
     @RequestMapping(value = "/detail/{customId}")
     @ResponseBody
-    public Object detail(@PathVariable("customId") Integer customId) {
+    public Object detail(@PathVariable("customId") String customId) {
         return customService.selectById(customId);
     }
 }

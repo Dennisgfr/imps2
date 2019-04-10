@@ -68,7 +68,7 @@ Room.openRoomDetail = function () {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/room/room_update/' + Room.seItem.id
+            content: Feng.ctxPath + '/room/room_update/' + Room.seItem.fjbh
         });
         this.layerIndex = index;
     }
@@ -85,7 +85,7 @@ Room.delete = function () {
         }, function (data) {
             Feng.error("删除失败!" + data.responseJSON.message + "!");
         });
-        ajax.set("roomId",this.seItem.id);
+        ajax.set("roomId",this.seItem.fjbh);
         ajax.start();
     }
 };

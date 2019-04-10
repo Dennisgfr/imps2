@@ -36,6 +36,7 @@ Custom.check = function () {
         return false;
     }else{
         Custom.seItem = selected[0];
+        console.log(selected[0].yzbh);
         return true;
     }
 };
@@ -66,7 +67,7 @@ Custom.openCustomDetail = function () {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/custom/custom_update/' + Custom.seItem.id
+            content: Feng.ctxPath + '/custom/custom_update/' + Custom.seItem.yzbh
         });
         this.layerIndex = index;
     }
@@ -83,7 +84,7 @@ Custom.delete = function () {
         }, function (data) {
             Feng.error("删除失败!" + data.responseJSON.message + "!");
         });
-        ajax.set("customId",this.seItem.id);
+        ajax.set("customId",this.seItem.yzbh);
         ajax.start();
     }
 };

@@ -24,6 +24,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> implements ICustomService {
 
     @Autowired
+    private ICustomService iCustomService;
+    @Autowired
     private IRoomService iRoomService;
     @Override
     public boolean insert(Custom entity) {
@@ -50,6 +52,25 @@ public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> impleme
         ew.eq("fjbh",lc+fjh);
         flag = iRoomService.update(room,ew);
 
+        return flag;
+    }
+
+    @Override
+    public boolean delete(String customId) {
+        /**
+         * 删除业主
+         */
+        EntityWrapper<Custom> ew = new EntityWrapper<>();
+        ew.eq("yzbh",customId);
+        iCustomService.delete(ew);
+        /**
+         * 房屋归还
+         */
+        Room room = new Room();
+        room.setYzbh("");
+        EntityWrapper<Room> ewr = new EntityWrapper<>();
+        ewr.eq("yzbh",customId);
+        boolean flag = iRoomService.update(room,ewr);
         return flag;
     }
 }
