@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.RoomMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Room">
+        <id column="fjbh" property="fjbh" />
+        <result column="shdl" property="shdl" />
+        <result column="dyh" property="dyh" />
+        <result column="lch" property="lch" />
+        <result column="fjh" property="fjh" />
+        <result column="fx" property="fx" />
+        <result column="jzmj" property="jzmj" />
+        <result column="symj" property="symj" />
+        <result column="jysm" property="jysm" />
+        <result column="zxqk" property="zxqk" />
+        <result column="yzbh" property="yzbh" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        fjbh, shdl, dyh, lch, fjh, fx, jzmj, symj, jysm, zxqk, yzbh
+    </sql>
+
+</mapper>

@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="ygbh" name="员工编号" underline="true"/>-->
+                            <#input id="ygxm" name="" underline="true"/>
+                            <#input id="ygxb" name="员工性别" underline="true"/>
+                            <#input id="sfz" name="身份证" underline="true"/>
+                            <#input id="ygjg" name="员工籍贯" underline="true"/>
+                            <#input id="ygmz" name="员工名族"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="gzbm" name="工作部门" underline="true"/>
+                            <#input id="rzsj" name="入职时间" underline="true"/>
+                            <#input id="ygdh" name="电话" underline="true"/>
+                            <#input id="gznr" name="工作内容" underline="true"/>
+                            <#input id="yhkh" name="银行卡号" underline="true"/>
+                            <#input id="zw" name="职务" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="EmployeeInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="EmployeeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/employee/employee/employee_info.js"></script>
+@}

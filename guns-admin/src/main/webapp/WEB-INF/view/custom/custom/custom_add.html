@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="yzxm" name="业主姓名" underline="true"/>
+                            <!--<#input id="yzbh" name="业主编号 " underline="true"/>-->
+                            <#input id="xb" name="性别" underline="true"/>
+                            <#input id="jg" name="业主籍贯" underline="true"/>
+                            <#input id="yzdh" name="业主电话" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="zjlx" name="证件类型" underline="true"/>
+                            <#input id="zjhm" name="证件号码" underline="true"/>
+
+                            <#input id="yzjulc" name="业主居住楼层" underline="true"/>
+                            <#input id="yzjzfjh" name="业主居住房间号" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CustomInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CustomInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/custom/custom/custom_info.js"></script>
+@}

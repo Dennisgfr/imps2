@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.EmployeeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Employee">
+        <id column="ygbh" property="ygbh" />
+        <result column="ygxm" property="ygxm" />
+        <result column="ygxb" property="ygxb" />
+        <result column="sfz" property="sfz" />
+        <result column="ygjg" property="ygjg" />
+        <result column="ygmz" property="ygmz" />
+        <result column="gzbm" property="gzbm" />
+        <result column="rzsj" property="rzsj" />
+        <result column="ygdh" property="ygdh" />
+        <result column="gznr" property="gznr" />
+        <result column="yhkh" property="yhkh" />
+        <result column="zw" property="zw" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ygbh, ygxm, ygxb, sfz, ygjg, ygmz, gzbm, rzsj, ygdh, gznr, yhkh, zw
+    </sql>
+
+</mapper>

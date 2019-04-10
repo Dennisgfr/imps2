@@ -1,0 +1,38 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="fjbh" name="房间编号" underline="true"/>-->
+                            <#input id="shdl" name="所属大楼编号" underline="true"/>
+                            <#input id="dyh" name="单元号" underline="true"/>
+                            <#input id="lch" name="楼层号" underline="true"/>
+                            <#input id="fjh" name="房间号" underline="true"/>
+                            <#input id="fx" name="房型"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="jzmj" name="建筑面积" underline="true"/>
+                            <#input id="symj" name="使用面积" underline="true"/>
+                            <#input id="jysm" name="简要说明" underline="true"/>
+                            <#input id="zxqk" name="装修情况" underline="true"/>
+                            <!--<#input id="yzbh" name="业主编号" underline="true"/>-->
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="RoomInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="RoomInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/room/room/room_info.js"></script>
+@}

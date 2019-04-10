@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="id" name="id" underline="true"/>-->
+                            <#input id="fjbh" name="房间编号" underline="true"/>
+                            <#input id="yzxm" name="业主姓名" underline="true"/>
+                            <#input id="yzdh" name="业主电话" underline="true"/>
+                            <#input id="wxxm" name="维修项目"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="wxrq" name="维修日期" underline="true"/>
+                            <#input id="wxrybh" name="维修人编号" underline="true"/>
+                            <#input id="wxrxm" name="维修人姓名" underline="true"/>
+                            <#input id="yzpj" name="业主评价" underline="true"/>
+                            <#input id="bz" name="备注" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="FixInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="FixInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/fix/fix/fix_info.js"></script>
+@}

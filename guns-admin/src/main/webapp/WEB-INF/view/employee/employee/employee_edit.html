@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="ygbh" name="员工编号" value="${item.ygbh}" underline="true"/>-->
+                            <#input id="ygxm" name="" value="${item.ygxm}" underline="true"/>
+                            <#input id="ygxb" name="员工性别" value="${item.ygxb}" underline="true"/>
+                            <#input id="sfz" name="身份证" value="${item.sfz}" underline="true"/>
+                            <#input id="ygjg" name="员工籍贯" value="${item.ygjg}" underline="true"/>
+                            <#input id="ygmz" name="员工名族" value="${item.ygmz}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="gzbm" name="工作部门" value="${item.gzbm}" underline="true"/>
+                            <#input id="rzsj" name="入职时间" value="${item.rzsj}" underline="true"/>
+                            <#input id="ygdh" name="电话" value="${item.ygdh}" underline="true"/>
+                            <#input id="gznr" name="工作内容" value="${item.gznr}" underline="true"/>
+                            <#input id="yhkh" name="银行卡号" value="${item.yhkh}" underline="true"/>
+                            <#input id="zw" name="职务" value="${item.zw}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="EmployeeInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="EmployeeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/employee/employee/employee_info.js"></script>
+@}
