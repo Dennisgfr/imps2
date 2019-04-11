@@ -22,5 +22,11 @@
     <sql id="Base_Column_List">
         ygbh, ygxm, ygxb, sfz, ygjg, ygmz, gzbm, rzsj, ygdh, gznr, yhkh, zw
     </sql>
+    <delete id="deleteById" parameterType="integer">
+        delete from imps_employee where ygbh = #{employeeId}
+    </delete>
+    <select id="selectById" parameterType="integer" resultType="com.stylefeng.guns.modular.system.model.Employee">
+        select * from imps_employee  where ygbh = #{employeeId}
+    </select>
 
 </mapper>

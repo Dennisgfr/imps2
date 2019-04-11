@@ -48,7 +48,7 @@ Custom.openAddCustom = function () {
     var index = layer.open({
         type: 2,
         title: '添加业主管理',
-        area: ['800px', '420px'], //宽高
+        area: ['1000px', '600px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/custom/custom_add'
@@ -64,7 +64,7 @@ Custom.openCustomDetail = function () {
         var index = layer.open({
             type: 2,
             title: '业主管理详情',
-            area: ['800px', '420px'], //宽高
+            area: ['1000px', '600px'], //宽高
             fix: false, //不固定
             maxmin: true,
             content: Feng.ctxPath + '/custom/custom_update/' + Custom.seItem.yzbh

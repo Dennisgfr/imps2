@@ -1,6 +1,10 @@
 package com.stylefeng.guns.modular.employee.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.stylefeng.guns.core.base.controller.BaseController;
+import com.stylefeng.guns.core.common.constant.factory.ConstantFactory;
+import com.stylefeng.guns.modular.system.warpper.EmployeeWarpper;
+import com.stylefeng.guns.modular.system.warpper.UserWarpper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +15,9 @@ import com.stylefeng.guns.core.log.LogObjectHolder;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.stylefeng.guns.modular.system.model.Employee;
 import com.stylefeng.guns.modular.employee.service.IEmployeeService;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 员工管理控制器
@@ -50,6 +57,7 @@ public class EmployeeController extends BaseController {
     public String employeeUpdate(@PathVariable Integer employeeId, Model model) {
         Employee employee = employeeService.selectById(employeeId);
         model.addAttribute("item",employee);
+        model.addAttribute("deptName", ConstantFactory.me().getDeptName(employee.getGzbm()));
         LogObjectHolder.me().set(employee);
         return PREFIX + "employee_edit.html";
     }
@@ -60,7 +68,8 @@ public class EmployeeController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
-        return employeeService.selectList(null);
+        List<Map<String, Object>> employees = employeeService.selectEmployees(condition);
+        return new EmployeeWarpper(employees).warp();
     }
 
     /**
@@ -89,7 +98,7 @@ public class EmployeeController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Employee employee) {
-        employeeService.updateById(employee);
+        employeeService.update(employee);
         return SUCCESS_TIP;
     }
 

@@ -15,12 +15,12 @@ Employee.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
             {title: '员工编号', field: 'ygbh', visible: true, align: 'center', valign: 'middle'},
-            {title: '', field: 'ygxm', visible: true, align: 'center', valign: 'middle'},
+            {title: '员工姓名', field: 'ygxm', visible: true, align: 'center', valign: 'middle'},
             {title: '员工性别', field: 'ygxb', visible: true, align: 'center', valign: 'middle'},
             {title: '身份证', field: 'sfz', visible: true, align: 'center', valign: 'middle'},
             {title: '员工籍贯', field: 'ygjg', visible: true, align: 'center', valign: 'middle'},
-            {title: '员工名族', field: 'ygmz', visible: true, align: 'center', valign: 'middle'},
-            {title: '工作部门', field: 'gzbm', visible: true, align: 'center', valign: 'middle'},
+            {title: '员工民族', field: 'ygmz', visible: true, align: 'center', valign: 'middle'},
+            {title: '工作部门', field: 'deptName', visible: true, align: 'center', valign: 'middle'},
             {title: '入职时间', field: 'rzsj', visible: true, align: 'center', valign: 'middle'},
             {title: '电话', field: 'ygdh', visible: true, align: 'center', valign: 'middle'},
             {title: '工作内容', field: 'gznr', visible: true, align: 'center', valign: 'middle'},
@@ -50,7 +50,7 @@ Employee.openAddEmployee = function () {
     var index = layer.open({
         type: 2,
         title: '添加员工管理',
-        area: ['800px', '420px'], //宽高
+        area: ['1000px', '600px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/employee/employee_add'
@@ -66,10 +66,10 @@ Employee.openEmployeeDetail = function () {
         var index = layer.open({
             type: 2,
             title: '员工管理详情',
-            area: ['800px', '420px'], //宽高
+            area: ['1000px', '600px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/employee/employee_update/' + Employee.seItem.id
+            content: Feng.ctxPath + '/employee/employee_update/' + Employee.seItem.ygbh
         });
         this.layerIndex = index;
     }
@@ -86,7 +86,7 @@ Employee.delete = function () {
         }, function (data) {
             Feng.error("删除失败!" + data.responseJSON.message + "!");
         });
-        ajax.set("employeeId",this.seItem.id);
+        ajax.set("employeeId",this.seItem.ygbh);
         ajax.start();
     }
 };
@@ -105,4 +105,7 @@ $(function () {
     var table = new BSTable(Employee.id, "/employee/list", defaultColunms);
     table.setPaginationType("client");
     Employee.table = table.init();
+    // var ztree = new $ZTree("deptTree", "/dept/tree");
+    // ztree.bindOnClick(Employee.onClickDept);
+    // ztree.init();
 });

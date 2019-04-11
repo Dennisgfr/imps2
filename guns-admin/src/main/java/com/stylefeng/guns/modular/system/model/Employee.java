@@ -2,7 +2,7 @@ package com.stylefeng.guns.modular.system.model;
 
 import java.io.Serializable;
 
-import java.util.Date;
+import java.sql.Date;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -23,7 +23,10 @@ public class Employee extends Model<Employee> {
     /**
      * 员工编号
      */
-    private String ygbh;
+    private Integer ygbh;
+    /**
+     * 员工姓名
+     */
     private String ygxm;
     /**
      * 员工性别
@@ -38,13 +41,13 @@ public class Employee extends Model<Employee> {
      */
     private String ygjg;
     /**
-     * 员工名族
+     * 员工民族
      */
     private String ygmz;
     /**
      * 工作部门
      */
-    private String gzbm;
+    private Integer gzbm;
     /**
      * 入职时间
      */
@@ -67,11 +70,11 @@ public class Employee extends Model<Employee> {
     private String zw;
 
 
-    public String getYgbh() {
+    public Integer getYgbh() {
         return ygbh;
     }
 
-    public void setYgbh(String ygbh) {
+    public void setYgbh(Integer ygbh) {
         this.ygbh = ygbh;
     }
 
@@ -115,11 +118,11 @@ public class Employee extends Model<Employee> {
         this.ygmz = ygmz;
     }
 
-    public String getGzbm() {
+    public Integer getGzbm() {
         return gzbm;
     }
 
-    public void setGzbm(String gzbm) {
+    public void setGzbm(Integer gzbm) {
         this.gzbm = gzbm;
     }
 
