@@ -10,6 +10,7 @@ import java.util.Date;
  * @author stylefeng
  * @Date 2017/5/5 22:40
  */
+
 public class UserDto{
 
 	private Integer id;
@@ -19,10 +20,10 @@ public class UserDto{
 	private String name;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date birthday;
+//	private Date birthday;
 	private Integer sex;
-	private String email;
-	private String phone;
+//	private String email;
+//	private String phone;
 	private String roleid;
 	private Integer deptid;
 	private Integer status;
@@ -71,13 +72,13 @@ public class UserDto{
 		this.name = name;
 	}
 
-	public Date getBirthday() {
-		return birthday;
-	}
+//	public Date getBirthday() {
+//		return birthday;
+//	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
+//	public void setBirthday(Date birthday) {
+//		this.birthday = birthday;
+//	}
 
 	public Integer getSex() {
 		return sex;
@@ -87,21 +88,21 @@ public class UserDto{
 		this.sex = sex;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+//	public String getEmail() {
+//		return email;
+//	}
+//
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
+//
+//	public String getPhone() {
+//		return phone;
+//	}
+//
+//	public void setPhone(String phone) {
+//		this.phone = phone;
+//	}
 
 	public String getRoleid() {
 		return roleid;

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * <p>
@@ -30,7 +31,7 @@ public class Custom extends Model<Custom> {
     /**
      * 性别
      */
-    private String xb;
+    private Integer xb;
     /**
      * 业主籍贯
      */
@@ -56,6 +57,12 @@ public class Custom extends Model<Custom> {
      */
     private String yzjzfjh;
 
+    /**
+     * 创建时间
+     *
+     */
+    private Date cjsj;
+
 
     public String getYzxm() {
         return yzxm;
@@ -73,11 +80,11 @@ public class Custom extends Model<Custom> {
         this.yzbh = yzbh;
     }
 
-    public String getXb() {
+    public Integer getXb() {
         return xb;
     }
 
-    public void setXb(String xb) {
+    public void setXb(Integer xb) {
         this.xb = xb;
     }
 
@@ -147,5 +154,13 @@ public class Custom extends Model<Custom> {
         ", yzjulc=" + yzjulc +
         ", yzjzfjh=" + yzjzfjh +
         "}";
+    }
+
+    public Date getCjsj() {
+        return cjsj;
+    }
+
+    public void setCjsj(Date cjsj) {
+        this.cjsj = cjsj;
     }
 }

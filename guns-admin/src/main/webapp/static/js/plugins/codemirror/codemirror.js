@@ -1560,10 +1560,10 @@
       return ext;
   }
 
-  // Measurement can be split in two steps, the set-up work that
+  // Measurement can be split in two steps, the set-up employ.work that
   // applies to the whole line, and the measurement of the actual
   // character. Functions like coordsChar, that need to do a lot of
-  // measurements in a row, can thus ensure that the set-up work is
+  // measurements in a row, can thus ensure that the set-up employ.work is
   // only done once.
   function prepareMeasureForLine(cm, line) {
     var lineN = lineNo(line);
@@ -2951,7 +2951,7 @@
     return gutterEvent(cm, e, "gutterClick", true, signalLater);
   }
 
-  // Kludge to work around strange IE behavior where it'll sometimes
+  // Kludge to employ.work around strange IE behavior where it'll sometimes
   // re-fire a series of drag-related events right after the drop (#1551)
   var lastDrop = 0;
 
@@ -3310,7 +3310,7 @@
 
   // CONTEXT MENU HANDLING
 
-  // To make the context menu work, we need to briefly unhide the
+  // To make the context menu employ.work, we need to briefly unhide the
   // textarea (making it as unobtrusive as possible) to let the
   // right-click take effect on it.
   function onContextMenu(cm, e) {
@@ -7094,7 +7094,7 @@
 
   // EVENT HANDLING
 
-  // Lightweight event framework. on/off also work on DOM nodes,
+  // Lightweight event framework. on/off also employ.work on DOM nodes,
   // registering native DOM handlers.
 
   var on = CodeMirror.on = function(emitter, type, f) {
@@ -7132,7 +7132,7 @@
   var orphanDelayedCallbacks = null;
 
   // Often, we want to signal events at a point where we are in the
-  // middle of some work, but don't want the handler to start calling
+  // middle of some employ.work, but don't want the handler to start calling
   // other methods on the editor, which might be in an inconsistent
   // state or simply not expect any other events to happen.
   // signalLater looks whether there are any handlers, and schedules
@@ -7427,7 +7427,7 @@
   // Detect drag-and-drop
   var dragAndDrop = function() {
     // There is *some* kind of drag-and-drop support in IE6-8, but I
-    // couldn't get it to work yet.
+    // couldn't get it to employ.work yet.
     if (ie && ie_version < 9) return false;
     var div = elt('div');
     return "draggable" in div || "dragDrop" in div;

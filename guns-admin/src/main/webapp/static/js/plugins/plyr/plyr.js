@@ -1090,7 +1090,7 @@
                 // If caption file exists, process captions
                 else {
                     // Turn off native caption rendering to avoid double captions
-                    // This doesn't seem to work in Safari 7+, so the <track> elements are removed from the dom below
+                    // This doesn't seem to employ.work in Safari 7+, so the <track> elements are removed from the dom below
                     var tracks = player.media.textTracks;
                     for (var x = 0; x < tracks.length; x++) {
                         tracks[x].mode = 'hidden';

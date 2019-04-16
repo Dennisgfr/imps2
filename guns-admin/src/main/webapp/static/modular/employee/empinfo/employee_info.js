@@ -54,6 +54,8 @@ EmployeeInfoDlg.onClickDept = function (e, treeId, treeNode) {
     console.log("点击");
     console.log(treeNode);
     $("#gzbm").attr("value", treeNode.id);
+    var jobTree = $ZTree()
+
 };
 
 /**
@@ -130,7 +132,7 @@ EmployeeInfoDlg.addSubmit = function() {
     this.collectData();
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/employee/add", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/empinfo/add", function(data){
         Feng.success("添加成功!");
         window.parent.Employee.table.refresh();
         EmployeeInfoDlg.close();
@@ -150,7 +152,7 @@ EmployeeInfoDlg.editSubmit = function() {
     this.collectData();
 
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/employee/update", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/empinfo/update", function(data){
         Feng.success("修改成功!");
         window.parent.Employee.table.refresh();
         EmployeeInfoDlg.close();

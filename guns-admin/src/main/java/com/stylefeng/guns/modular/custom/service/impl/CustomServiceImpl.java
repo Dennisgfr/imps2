@@ -7,6 +7,9 @@ import com.stylefeng.guns.modular.system.dao.CustomMapper;
 import com.stylefeng.guns.modular.custom.service.ICustomService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.stylefeng.guns.modular.system.model.Room;
+import com.stylefeng.guns.modular.system.model.User;
+import com.stylefeng.guns.modular.system.service.IUserService;
+import com.stylefeng.guns.modular.system.transfer.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +30,14 @@ public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> impleme
     private ICustomService iCustomService;
     @Autowired
     private IRoomService iRoomService;
+    @Autowired
+    private IUserService iUserService;
+
+    /**
+     * 添加业主
+     * @param entity
+     * @return
+     */
     @Override
     public boolean insert(Custom entity) {
         /**
@@ -42,6 +53,22 @@ public class CustomServiceImpl extends ServiceImpl<CustomMapper, Custom> impleme
         entity.setYzbh(code);
         boolean insert = super.insert(entity);
         boolean flag = insert;
+        /**
+         * 注册账号
+         */
+        UserDto user = new UserDto();
+        user.setName(entity.getYzxm());
+        user.setAccount(code);  //业主编号 作为账户名
+        user.setPassword("123456"); //初始密码为 123456
+        user.setRoleid("12");  //角色 业主
+        user.setDeptid(29);  //部门 业主委员会
+        user.setSex(entity.getXb());
+        user.setCreatetime(entity.getCjsj());
+        iUserService.add(user);
+
+
+
+
         /**
          * 修改房间所属状态
          */

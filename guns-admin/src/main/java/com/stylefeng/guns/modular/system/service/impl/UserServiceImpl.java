@@ -1,12 +1,20 @@
 package com.stylefeng.guns.modular.system.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.stylefeng.guns.core.common.constant.state.ManagerStatus;
+import com.stylefeng.guns.core.common.exception.BizExceptionEnum;
 import com.stylefeng.guns.core.datascope.DataScope;
+import com.stylefeng.guns.core.exception.GunsException;
+import com.stylefeng.guns.core.shiro.ShiroKit;
 import com.stylefeng.guns.modular.system.dao.UserMapper;
+import com.stylefeng.guns.modular.system.factory.UserFactory;
 import com.stylefeng.guns.modular.system.model.User;
 import com.stylefeng.guns.modular.system.service.IUserService;
+import com.stylefeng.guns.modular.system.transfer.UserDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +28,8 @@ import java.util.Map;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+    @Autowired
+    private IUserService userService;
 
     @Override
     public int setStatus(Integer userId, int status) {
@@ -44,5 +54,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public User getByAccount(String account) {
         return this.baseMapper.getByAccount(account);
+    }
+
+    public boolean add(UserDto user) {
+        // 判断账号是否重复
+        User theUser = userService.getByAccount(user.getAccount());
+        if (theUser != null) {
+            throw new GunsException(BizExceptionEnum.USER_ALREADY_REG);
+        }
+
+        // 完善账号信息
+        user.setSalt(ShiroKit.getRandomSalt(5));
+        user.setPassword(ShiroKit.md5(user.getPassword(), user.getSalt()));
+        user.setStatus(ManagerStatus.OK.getCode());
+//        user.setCreatetime(new Date());
+
+        return super.insert(UserFactory.createUser(user));
     }
 }

@@ -46,22 +46,22 @@ public class User extends Model<User> {
      * 名字
      */
 	private String name;
-    /**
-     * 生日
-     */
-	private Date birthday;
+//    /**
+//     * 生日
+//     */
+//	private Date birthday;
     /**
      * 性别（1：男 2：女）
      */
 	private Integer sex;
-    /**
-     * 电子邮件
-     */
-	private String email;
-    /**
-     * 电话
-     */
-	private String phone;
+//    /**
+//     * 电子邮件
+//     */
+//	private String email;
+//    /**
+//     * 电话
+//     */
+//	private String phone;
     /**
      * 角色id
      */
@@ -132,13 +132,13 @@ public class User extends Model<User> {
 		this.name = name;
 	}
 
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
+//	public Date getBirthday() {
+//		return birthday;
+//	}
+//
+//	public void setBirthday(Date birthday) {
+//		this.birthday = birthday;
+//	}
 
 	public Integer getSex() {
 		return sex;
@@ -148,21 +148,21 @@ public class User extends Model<User> {
 		this.sex = sex;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+//	public String getEmail() {
+//		return email;
+//	}
+//
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
+//
+//	public String getPhone() {
+//		return phone;
+//	}
+//
+//	public void setPhone(String phone) {
+//		this.phone = phone;
+//	}
 
 	public String getRoleid() {
 		return roleid;
@@ -218,10 +218,7 @@ public class User extends Model<User> {
 			", password=" + password +
 			", salt=" + salt +
 			", name=" + name +
-			", birthday=" + birthday +
 			", sex=" + sex +
-			", email=" + email +
-			", phone=" + phone +
 			", roleid=" + roleid +
 			", deptid=" + deptid +
 			", status=" + status +

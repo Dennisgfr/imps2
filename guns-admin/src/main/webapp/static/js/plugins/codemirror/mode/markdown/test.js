@@ -108,7 +108,7 @@
   MT("inlineCodeUsingBackticks",
      "foo [comment `bar`]");
 
-  // Block code using single backtick (shouldn't work)
+  // Block code using single backtick (shouldn't employ.work)
   MT("blockCodeSingleBacktick",
      "[comment `]",
      "foo",
@@ -176,7 +176,7 @@
      "[header&header-1 # foo ][header&header-1&em *bar*]");
 
   // Setext headers - H1, H2
-  // Per documentation, "Any number of underlining =’s or -’s will work."
+  // Per documentation, "Any number of underlining =’s or -’s will employ.work."
   // http://daringfireball.net/projects/markdown/syntax#header
   // Ideally, the text would be marked as `header` as well, but this is
   // not really feasible at the moment. So, instead, we're testing against
@@ -187,7 +187,7 @@
      "foo",
      "[header&header-1 =]");
 
-  // Check if 3+ ='s work
+  // Check if 3+ ='s employ.work
   MT("setextH1",
      "foo",
      "[header&header-1 ===]");
@@ -197,7 +197,7 @@
      "foo",
      "[header&header-2 -]");
 
-  // Check if 3+ -'s work
+  // Check if 3+ -'s employ.work
   MT("setextH2",
      "foo",
      "[header&header-2 ---]");

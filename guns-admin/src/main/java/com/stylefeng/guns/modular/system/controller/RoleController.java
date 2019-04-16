@@ -108,6 +108,16 @@ public class RoleController extends BaseController {
         List<Map<String, Object>> roles = this.roleService.selectRoles(super.getPara("roleName"));
         return super.warpObject(new RoleWarpper(roles));
     }
+//    /**
+//     * 根据部门id获取角色列表
+//     */
+//    @Permission
+//    @RequestMapping(value = "/job/{deptId}")
+//    @ResponseBody
+//    public Object deptList(@PathVariable("deptId") Integer deptId, Model model) {
+//        List<ZTreeNode> roles = this.roleService.roleTreeListByDeptId(deptId);
+//
+//    }
 
     /**
      * 角色新增

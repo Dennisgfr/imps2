@@ -36,6 +36,7 @@
 		else 'false' end) "open" from sys_role
 	</select>
 
+
 	<select id="roleTreeListByRoleId" resultType="com.stylefeng.guns.core.node.ZTreeNode">
 		SELECT
 		r.id "id",
@@ -75,5 +76,10 @@
 		ORDER BY
 		pId,
 		num ASC
+	</select>
+	<select id="roleTreeListByDeptId" resultType="com.stylefeng.guns.core.node.ZTreeNode">
+		select id "id",pId
+		"pId",name as "name",(case when (pId=0 or pId is null) then 'true'
+		else 'false' end) "open" from sys_role where deptid = #{deptid}
 	</select>
 </mapper>

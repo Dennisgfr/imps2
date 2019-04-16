@@ -191,9 +191,9 @@ INSERT INTO `sys_menu` VALUES ('164', 'role_list', 'role', '[0],[system],[role],
 INSERT INTO `sys_menu` VALUES ('165', 'to_assign_role', 'mgr', '[0],[system],[mgr],', '分配角色跳转', '', '/mgr/role_assign', '8', '3', '0', null, '1', null);
 INSERT INTO `sys_menu` VALUES ('166', 'to_user_edit', 'mgr', '[0],[system],[mgr],', '编辑用户跳转', '', '/mgr/user_edit', '9', '3', '0', null, '1', null);
 INSERT INTO `sys_menu` VALUES ('167', 'mgr_list', 'mgr', '[0],[system],[mgr],', '用户列表', '', '/mgr/list', '10', '3', '0', null, '1', null);
-INSERT INTO `sys_menu` VALUES ('168', 'expense', '0', '[0],', '报销管理', 'fa-clone', '#', '5', '1', '1', null, '1', null);
-INSERT INTO `sys_menu` VALUES ('169', 'expense_fill', 'expense', '[0],[expense],', '报销申请', '', '/expense', '1', '2', '1', null, '1', null);
-INSERT INTO `sys_menu` VALUES ('170', 'expense_progress', 'expense', '[0],[expense],', '报销审批', '', '/process', '2', '2', '1', null, '1', null);
+INSERT INTO `sys_menu` VALUES ('168', 'expenses', '0', '[0],', '报销管理', 'fa-clone', '#', '5', '1', '1', null, '1', null);
+INSERT INTO `sys_menu` VALUES ('169', 'expense_fill', 'expenses', '[0],[expenses],', '报销申请', '', '/expenses', '1', '2', '1', null, '1', null);
+INSERT INTO `sys_menu` VALUES ('170', 'expense_progress', 'expenses', '[0],[expenses],', '报销审批', '', '/process', '2', '2', '1', null, '1', null);
 
 -- ----------------------------
 -- Table structure for sys_notice

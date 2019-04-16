@@ -23,6 +23,7 @@ import com.stylefeng.guns.modular.system.model.User;
 import com.stylefeng.guns.modular.system.service.IUserService;
 import com.stylefeng.guns.modular.system.transfer.UserDto;
 import com.stylefeng.guns.modular.system.warpper.UserWarpper;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,7 +45,8 @@ import java.util.UUID;
  * @author fengshuonan
  * @Date 2017年1月11日 下午1:08:17
  */
-@Controller
+
+@RestController
 @RequestMapping("/mgr")
 public class UserMgrController extends BaseController {
 
@@ -178,23 +180,11 @@ public class UserMgrController extends BaseController {
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public Tip add(@Valid UserDto user, BindingResult result) {
+
         if (result.hasErrors()) {
             throw new GunsException(BizExceptionEnum.REQUEST_NULL);
         }
-
-        // 判断账号是否重复
-        User theUser = userService.getByAccount(user.getAccount());
-        if (theUser != null) {
-            throw new GunsException(BizExceptionEnum.USER_ALREADY_REG);
-        }
-
-        // 完善账号信息
-        user.setSalt(ShiroKit.getRandomSalt(5));
-        user.setPassword(ShiroKit.md5(user.getPassword(), user.getSalt()));
-        user.setStatus(ManagerStatus.OK.getCode());
-        user.setCreatetime(new Date());
-
-        this.userService.insert(UserFactory.createUser(user));
+        this.userService.add(user);
         return SUCCESS_TIP;
     }
 

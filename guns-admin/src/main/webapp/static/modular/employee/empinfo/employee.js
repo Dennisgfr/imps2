@@ -53,7 +53,7 @@ Employee.openAddEmployee = function () {
         area: ['1000px', '600px'], //宽高
         fix: false, //不固定
         maxmin: true,
-        content: Feng.ctxPath + '/employee/employee_add'
+        content: Feng.ctxPath + '/empinfo/employee_add'
     });
     this.layerIndex = index;
 };
@@ -69,7 +69,7 @@ Employee.openEmployeeDetail = function () {
             area: ['1000px', '600px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/employee/employee_update/' + Employee.seItem.ygbh
+            content: Feng.ctxPath + '/empinfo/employee_update/' + Employee.seItem.ygbh
         });
         this.layerIndex = index;
     }
@@ -80,7 +80,7 @@ Employee.openEmployeeDetail = function () {
  */
 Employee.delete = function () {
     if (this.check()) {
-        var ajax = new $ax(Feng.ctxPath + "/employee/delete", function (data) {
+        var ajax = new $ax(Feng.ctxPath + "/empinfo/delete", function (data) {
             Feng.success("删除成功!");
             Employee.table.refresh();
         }, function (data) {
@@ -102,7 +102,7 @@ Employee.search = function () {
 
 $(function () {
     var defaultColunms = Employee.initColumn();
-    var table = new BSTable(Employee.id, "/employee/list", defaultColunms);
+    var table = new BSTable(Employee.id, "/empinfo/list", defaultColunms);
     table.setPaginationType("client");
     Employee.table = table.init();
     // var ztree = new $ZTree("deptTree", "/dept/tree");

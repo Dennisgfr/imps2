@@ -76,7 +76,7 @@ public class FlowableTest {
     public void start() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("taskUser", "fsn");
-        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey("Expense", map);
+        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey("Expenses", map);
         System.out.println("pid = " + processInstance.getId());
         System.out.println("activityId = " + processInstance.getActivityId());
         System.out.println("getProcessDefinitionId = " + processInstance.getProcessDefinitionId());
@@ -201,7 +201,7 @@ public class FlowableTest {
         int taskIndex = Integer.valueOf(scanner.nextLine());
         Task task = tasks.get(taskIndex - 1);
         Map<String, Object> processVariables = taskService.getVariables(task.getId());
-        System.out.println(processVariables.get("employee") + " wants " +
+        System.out.println(processVariables.get("empinfo") + " wants " +
                 processVariables.get("nrOfHolidays") + " of holidays. Do you approve this?");
 
         boolean approved = scanner.nextLine().toLowerCase().equals("y");

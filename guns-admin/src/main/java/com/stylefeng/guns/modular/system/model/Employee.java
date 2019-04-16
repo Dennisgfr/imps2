@@ -31,7 +31,7 @@ public class Employee extends Model<Employee> {
     /**
      * 员工性别
      */
-    private String ygxb;
+    private Integer ygxb;
     /**
      * 身份证
      */
@@ -86,11 +86,11 @@ public class Employee extends Model<Employee> {
         this.ygxm = ygxm;
     }
 
-    public String getYgxb() {
+    public Integer getYgxb() {
         return ygxb;
     }
 
-    public void setYgxb(String ygxb) {
+    public void setYgxb(Integer ygxb) {
         this.ygxb = ygxb;
     }
 

@@ -25,18 +25,18 @@
                                             <option value="2">女</option>
                                         </#select>
 
-                                        <#input id="roleid" name="角色" underline="true" value="${roleName}" disabled="disabled"/>
+                                        <!--<#input id="roleid" name="角色" underline="true" value="${roleName}" disabled="disabled"/>-->
 
-                                        <#input id="email" name="邮箱" type="email" value="${user.email}"/>
+                                        <!--<#input id="email" name="邮箱" type="email" value="${user.email}"/>-->
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div id="driverInfoContent">
                                             <#input id="name" name="姓名" underline="true" value="${user.name}"/>
 
-                                            <#input id="birthday" name="出生日期" underline="true"
-                                                    value="${user.birthday}"
-                                                    clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
+                                            <!--<#input id="birthday" name="出生日期" underline="true"-->
+                                                    <!--value="${user.birthday}"-->
+                                                    <!--clickFun="laydate({istime: false, format: 'YYYY-MM-DD'})"/>-->
 
                                             <#input id="citySel" name="部门" underline="true" readonly="readonly" value="${deptName}"
                                                     hidden="deptid" hiddenValue="${user.deptid}"
@@ -44,7 +44,7 @@
                                                     style="background-color: #ffffff !important;"
                                                     selectFlag="true" selectId="menuContent" selectTreeId="treeDemo" selectStyle="width:250px !important;"/>
 
-                                            <#input id="phone" name="电话" value="${user.phone}"/>
+                                            <!--<#input id="phone" name="电话" value="${user.phone}"/>-->
                                         </div>
                                     </div>
                                 </div>

@@ -3,7 +3,7 @@ package com.stylefeng.guns.modular.system.model;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
-import java.util.Date;
+import java.sql.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -50,7 +50,7 @@ public class Fix extends Model<Fix> {
     /**
      * 维修人编号
      */
-    private String wxrybh;
+    private Integer wxrybh;
     /**
      * 维修人姓名
      */
@@ -113,11 +113,11 @@ public class Fix extends Model<Fix> {
         this.wxrq = wxrq;
     }
 
-    public String getWxrybh() {
+    public Integer getWxrybh() {
         return wxrybh;
     }
 
-    public void setWxrybh(String wxrybh) {
+    public void setWxrybh(Integer wxrybh) {
         this.wxrybh = wxrybh;
     }
 

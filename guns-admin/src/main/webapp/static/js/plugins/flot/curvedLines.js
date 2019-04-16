@@ -30,7 +30,7 @@
  ____________________________________________________
 
  curvedLines is a plugin for flot, that tries to display lines in a smoother way.
- The plugin is based on nergal.dev's work https://code.google.com/p/flot/issues/detail?id=226
+ The plugin is based on nergal.dev's employ.work https://code.google.com/p/flot/issues/detail?id=226
  and further extended with a mode that forces the min/max points of the curves to be on the
  points. Both modes are achieved through adding of more data points
  => 1) with large data sets you may get trouble
@@ -38,7 +38,7 @@
 
  && 3) consecutive x data points are not allowed to have the same value
 
- This is version 0.5 of curvedLines so it will probably not work in every case. However
+ This is version 0.5 of curvedLines so it will probably not employ.work in every case. However
  the basic form of use descirbed next works (:
 
  Feel free to further improve the code
@@ -74,7 +74,7 @@
 
 /*
  *  v0.1   initial commit
- *  v0.15  negative values should work now (outcommented a negative -> 0 hook hope it does no harm)
+ *  v0.15  negative values should employ.work now (outcommented a negative -> 0 hook hope it does no harm)
  *  v0.2   added fill option (thanks to monemihir) and multi axis support (thanks to soewono effendi)
  *  v0.3   improved saddle handling and added basic handling of Dates
  *  v0.4   rewritten fill option (thomas ritou) mostly from original flot code (now fill between points rather than to graph bottom), corrected fill Opacity bug

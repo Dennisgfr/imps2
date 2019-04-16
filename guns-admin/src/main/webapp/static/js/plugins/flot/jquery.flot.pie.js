@@ -12,7 +12,7 @@ internally calculates the total and percentages.
 * Changes:
 	2009-10-22: lineJoin set to round
 	2009-10-23: IE full circle fix, donut
-	2009-11-11: Added basic hover from btburnett3 - does not work in IE, and center is off in Chrome and Opera
+	2009-11-11: Added basic hover from btburnett3 - does not employ.work in IE, and center is off in Chrome and Opera
 	2009-11-17: Added IE hover capability submitted by Anthony Aragues
 	2009-11-18: Added bug fix submitted by Xavi Ivars (issues with arrays when other JS libraries are included as well)
 
@@ -30,7 +30,7 @@ series: {
 			left: integer value to move the pie left or right, or 'auto'
 		},
 		stroke: {
-			color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#FFF')
+			color: any hexidecimal color value (other formats may or may not employ.work, so best to stick with something like '#FFF')
 			width: integer pixel width of the stroke
 		},
 		label: {
@@ -38,14 +38,14 @@ series: {
 			formatter:  a user-defined function that modifies the text/style of the label text
 			radius: 0-1 for percentage of fullsize, or a specified pixel length
 			background: {
-				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#000')
+				color: any hexidecimal color value (other formats may or may not employ.work, so best to stick with something like '#000')
 				opacity: 0-1
 			},
 			threshold: 0-1 for the percentage value at which to hide labels (if they're too small)
 		},
 		combine: {
 			threshold: 0-1 for the percentage value at which to combine slices (if they're too small)
-			color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#CCC'), if null, the plugin will automatically use the color of the first slice to be combined
+			color: any hexidecimal color value (other formats may or may not employ.work, so best to stick with something like '#CCC'), if null, the plugin will automatically use the color of the first slice to be combined
 			label: any text value of what the combined slice should be labeled
 		}
 		highlight: {
@@ -359,7 +359,7 @@ More detail and specific examples can be found in the included HTML file.
 				ctx.save();
 				ctx.translate(centerLeft,centerTop);
 				ctx.scale(1, options.series.pie.tilt);
-				//ctx.rotate(startAngle); // start at top; -- This doesn't work properly in Opera
+				//ctx.rotate(startAngle); // start at top; -- This doesn't employ.work properly in Opera
 
 				// draw slices
 				ctx.save();
@@ -407,10 +407,10 @@ More detail and specific examples can be found in the included HTML file.
 						ctx.moveTo(0,0); // Center of the pie
 					else if ($.browser.msie)
 						angle -= 0.0001;
-					//ctx.arc(0,0,radius,0,angle,false); // This doesn't work properly in Opera
+					//ctx.arc(0,0,radius,0,angle,false); // This doesn't employ.work properly in Opera
 					ctx.arc(0,0,radius,currentAngle,currentAngle+angle,false);
 					ctx.closePath();
-					//ctx.rotate(angle); // This doesn't work properly in Opera
+					//ctx.rotate(angle); // This doesn't employ.work properly in Opera
 					currentAngle += angle;
 
 					if (fill)
@@ -489,7 +489,7 @@ More detail and specific examples can be found in the included HTML file.
 				// subtract the center
 				layer.save();
 				innerRadius = options.series.pie.innerRadius > 1 ? options.series.pie.innerRadius : maxRadius * options.series.pie.innerRadius;
-				layer.globalCompositeOperation = 'destination-out'; // this does not work with excanvas, but it will fall back to using the stroke color
+				layer.globalCompositeOperation = 'destination-out'; // this does not employ.work with excanvas, but it will fall back to using the stroke color
 				layer.beginPath();
 				layer.fillStyle = options.series.pie.stroke.color;
 				layer.arc(0,0,innerRadius,0,Math.PI*2,false);

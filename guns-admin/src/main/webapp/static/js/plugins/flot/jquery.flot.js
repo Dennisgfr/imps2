@@ -1070,7 +1070,7 @@
                 if (opts.min == null)
                     min -= widen;
                 // always widen max if we couldn't widen min to ensure we
-                // don't fall into min == max which doesn't work
+                // don't fall into min == max which doesn't employ.work
                 if (opts.max == null || opts.min != null)
                     max += widen;
             }

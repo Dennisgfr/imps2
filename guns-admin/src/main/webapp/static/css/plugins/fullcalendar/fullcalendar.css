@@ -476,7 +476,7 @@ table.fc-border-separate {
 	}
 
 .fc-agenda-allday .fc-day-content {
-	min-height: 34px; /* TODO: doesnt work well in quirksmode */
+	min-height: 34px; /* TODO: doesnt employ.work well in quirksmode */
 	_height: 34px;
 	}
 
@@ -517,7 +517,7 @@ table.fc-border-separate {
 	}
 
 .fc-agenda-slots tr.fc-minor th.ui-widget-header {
-	*border-top-style: solid; /* doesn't work with background in IE6/7 */
+	*border-top-style: solid; /* doesn't employ.work with background in IE6/7 */
 	}
 
 
@@ -565,7 +565,7 @@ table.fc-border-separate {
 
 .fc .ui-draggable-dragging .fc-event-bg, /* TODO: something nicer like .fc-opacity */
 .fc-select-helper .fc-event-bg {
-	display: none\9; /* for IE6/7/8. nested opacity filters while dragging don't work */
+	display: none\9; /* for IE6/7/8. nested opacity filters while dragging don't employ.work */
 	}
 
 /* resizable */

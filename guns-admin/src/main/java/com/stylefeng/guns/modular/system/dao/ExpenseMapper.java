@@ -1,16 +1,16 @@
 package com.stylefeng.guns.modular.system.dao;
 
+import com.stylefeng.guns.modular.system.model.Expenses;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.stylefeng.guns.modular.system.model.Expense;
 
 /**
  * <p>
-  * 报销表 Mapper 接口
+ * 业主收费管理表 Mapper 接口
  * </p>
  *
- * @author stylefeng
- * @since 2017-12-04
+ * @author gfr123
+ * @since 2019-04-12
  */
-public interface ExpenseMapper extends BaseMapper<Expense> {
+public interface ExpenseMapper extends BaseMapper<Expenses> {
 
 }

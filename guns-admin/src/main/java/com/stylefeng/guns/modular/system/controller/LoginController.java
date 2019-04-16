@@ -14,6 +14,8 @@ import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.modular.system.model.User;
 import com.stylefeng.guns.modular.system.service.IMenuService;
 import com.stylefeng.guns.modular.system.service.IUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -32,7 +35,8 @@ import static com.stylefeng.guns.core.support.HttpKit.getIp;
  * @author fengshuonan
  * @Date 2017年1月10日 下午8:25:24
  */
-@Controller
+@Api(value = "用户登录controller", description = "用户登录", tags = {"用户登录接口"})
+@RestController
 public class LoginController extends BaseController {
 
     @Autowired

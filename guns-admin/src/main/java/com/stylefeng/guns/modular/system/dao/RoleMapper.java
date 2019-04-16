@@ -50,4 +50,12 @@ public interface RoleMapper extends BaseMapper<Role> {
      * @date 2017年2月18日 上午10:32:04
      */
     List<ZTreeNode> roleTreeListByRoleId(String[] roleId);
+
+    /**
+     * 根据部门id 获取角色列表树
+     *
+     * @return
+     * @Date 2019年4月15日 09:52:49
+     */
+    List<ZTreeNode> roleTreeListByDeptId(Integer deptId);
 }

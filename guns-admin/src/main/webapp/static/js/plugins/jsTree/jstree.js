@@ -2979,7 +2979,7 @@
 						c = false,
 						i, j;
 					for(i = 0, j = p.length; i < j; i += 1) {
-						// separate IFs work whem o and l are the same
+						// separate IFs employ.work whem o and l are the same
 						if(p[i] === o) {
 							c = !c;
 						}
@@ -5691,7 +5691,7 @@
 						}
 					}, this))
 				.on("click.jstree", ".jstree-anchor", $.proxy(function (e) {
-						if(this._data.contextmenu.visible && (!last_ts || (+new Date()) - last_ts > 250)) { // work around safari & macOS ctrl+click
+						if(this._data.contextmenu.visible && (!last_ts || (+new Date()) - last_ts > 250)) { // employ.work around safari & macOS ctrl+click
 							$.vakata.context.hide();
 						}
 						last_ts = 0;
@@ -6194,7 +6194,7 @@
 		 */
 		drag_selection : true,
 		/**
-		 * controls whether dnd works on touch devices. If left as boolean true dnd will work the same as in desktop browsers, which in some cases may impair scrolling. If set to boolean false dnd will not work on touch devices. There is a special third option - string "selected" which means only selected nodes can be dragged on touch devices.
+		 * controls whether dnd works on touch devices. If left as boolean true dnd will employ.work the same as in desktop browsers, which in some cases may impair scrolling. If set to boolean false dnd will not employ.work on touch devices. There is a special third option - string "selected" which means only selected nodes can be dragged on touch devices.
 		 * @name $.jstree.defaults.dnd.touch
 		 * @plugin dnd
 		 */
